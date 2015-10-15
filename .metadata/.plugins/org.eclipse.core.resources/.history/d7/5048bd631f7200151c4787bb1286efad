@@ -7,10 +7,9 @@
 #title{
 	text-align: center;
 	background: #B2B2B2;
-	padding: 20px;
+	padding: 10px;
 	width: 800px;
 	margin: 50px auto;
-	border-radius: 30px;
 }
 
 #content{
@@ -24,24 +23,5 @@
 }
 
 hr{
-	width: 80%;
+	width: 90%;
 }
-
-a{
-	text-decoration: none;
-	color: white;
-	border: 1px solid black;
-	padding: 10px;
-	border-radius: 5px;
-	background: #3366FF;
-}
-
-a:hover{
-	background: #6699FF;
-}
-
-a:active{
-	background: white;
-	color: black;
-}
-

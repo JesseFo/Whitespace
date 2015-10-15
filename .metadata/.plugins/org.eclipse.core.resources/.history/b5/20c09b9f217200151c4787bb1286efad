@@ -24,12 +24,12 @@
 }
 
 hr{
-	width: 80%;
+	width: 90%;
 }
 
 a{
 	text-decoration: none;
-	color: white;
+	text-color: white;
 	border: 1px solid black;
 	padding: 10px;
 	border-radius: 5px;
@@ -38,10 +38,5 @@ a{
 
 a:hover{
 	background: #6699FF;
-}
-
-a:active{
-	background: white;
-	color: black;
 }
 

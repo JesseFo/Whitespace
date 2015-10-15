@@ -24,7 +24,7 @@
 }
 
 hr{
-	width: 80%;
+	width: 90%;
 }
 
 a{
@@ -38,10 +38,5 @@ a{
 
 a:hover{
 	background: #6699FF;
-}
-
-a:active{
-	background: white;
-	color: black;
 }
 

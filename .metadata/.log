@@ -12,3 +12,15 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2015-10-14 17:58:39.642
+!MESSAGE No repository found at file:/H:/eclipse/.eclipseextension.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2015-10-14 17:59:26.758
+!MESSAGE No repository found at file:/H:/eclipse/configuration/org.eclipse.osgi/341/data/listener_1925729951/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2015-10-14 17:59:26.840
+!MESSAGE No repository found at file:/F:/eclipse/configuration/org.eclipse.osgi/341/data/listener_1925729951/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2015-10-14 18:01:49.797
+!MESSAGE No repository found at file:/F:/eclipse/.eclipseextension.

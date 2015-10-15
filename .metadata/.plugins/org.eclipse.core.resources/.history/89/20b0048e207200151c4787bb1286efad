@@ -19,13 +19,13 @@
 						<h2>New Users</h2>
 						<hr />
 						<p>New users must register before using the site.</p>
-						<a href="#">Register &rArr;</a>
+						<a href="#">Register</a>
 					</td>
 					<td>
 						<h2>Login</h2>
 						<hr />
 						<p>Already registered? Login to begin using this site.</p>
-						<a href="#">Login &rArr;</a>
+						<a href="#">Login</a>
 					</td>
 				</tr></table>
 			</div>
