@@ -10,14 +10,13 @@
 	<body>
 		<div id="wrapper">
 			<nav>
-				Message Board
 				<a href="#">Home</a>
 				<a href="posts.html">Posts</a>
 				<a href="#">Admin</a>
 			</nav>
 			
 			<div id="content">
-				BLARF
+				
 			</div>
 		</div>
 	</body>
