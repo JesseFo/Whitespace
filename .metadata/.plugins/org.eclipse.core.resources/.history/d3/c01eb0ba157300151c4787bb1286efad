@@ -17,17 +17,7 @@
 			</nav>
 			
 			<div id="content">
-				<h1>Login</h1>
-				<table>
-					<tr>
-						<td class="formlabel">Email:</td>
-						<td><input type="text" name="loginemail" /></td>
-					</tr>
-					<tr>
-						<td class="formlabel">Password:</td>
-						<td><input type="text" name="loginpword" /></td>
-					</tr>
-				</table>
+				BLARF
 			</div>
 		</div>
 	</body>
