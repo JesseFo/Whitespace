@@ -30,12 +30,7 @@ nav > a
 	padding: 5px;
 }
 
-td
+.phone
 {
-	padding-right: 5px;
-}
-
-.formlabel
-{
-	text-align: right;
+	width: 150px;
 }

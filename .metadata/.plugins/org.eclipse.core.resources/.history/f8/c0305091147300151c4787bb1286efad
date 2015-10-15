@@ -34,8 +34,3 @@ td
 {
 	padding-right: 5px;
 }
-
-.formlabel
-{
-	text-align: right;
-}
