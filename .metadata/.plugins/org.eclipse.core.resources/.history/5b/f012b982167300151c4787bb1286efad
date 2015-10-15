@@ -81,8 +81,6 @@
 							<td><p>Your desired password. Must contain at least one letter and one number.</p></td>
 						</tr>
 					</table>
-					<input type="reset" value="Reset"/>
-					<input type="submit" value="Submit"/>
 				</form>
 			</div>
 		</div>

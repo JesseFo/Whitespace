@@ -29,7 +29,6 @@
 							<td><input type="text" name="loginpword" /></td>
 						</tr>
 					</table>
-					<input type="reset" value="Reset"/>
 					<input type="submit" value="Submit"/>
 				</form>
 			</div>
