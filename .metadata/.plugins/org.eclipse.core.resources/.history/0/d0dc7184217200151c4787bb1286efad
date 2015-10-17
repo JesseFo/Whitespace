@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+
+#wrapper{
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#title{
+	text-align: center;
+	background: #B2B2B2;
+	padding: 20px;
+	width: 800px;
+	margin: 50px auto;
+	border-radius: 30px;
+}
+
+#content{
+	text-align: center;
+	width: 800px;
+	margin: 0px auto 15px;
+}
+
+#content > table{
+	width: 100%;
+}
+
+hr{
+	width: 90%;
+}
+
+a{
+	text-decoration: none;
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 5px;
+	background: #6699FF 
+}
+
+a:hover{
+	background: #3366FF;
+}
+
