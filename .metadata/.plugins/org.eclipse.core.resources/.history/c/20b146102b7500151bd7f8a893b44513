@@ -1,0 +1,103 @@
+
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ValidateRegister
+ */
+@WebServlet("/ValidateRegister")
+public class ValidateRegister extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ValidateRegister() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+
+		//Get form values
+		//Name
+		String fName = request.getParameter("fname");
+		String lName = request.getParameter("lname");
+		
+		//Email
+		String email = request.getParameter("email");
+		string email2 = request.getParameter("email2");
+		
+		//Phone
+		String phone1 = request.getParameter("phone1");
+		String phone2 = request.getParameter("phone2");
+		String phone3 = request.getParameter("phone3");
+		
+		//Password
+		String pword = request.getParameter("pword");
+		String pword2 = request.getParameter("pword2");
+		
+		//Name Validation
+		if (request.getParameter("fname") == null)
+			response.sendError(0);
+		else
+			;
+		if (request.getParameter("lname") == null)
+			response.sendError(0);
+		else
+			;
+		
+		//Email Validation
+		if (request.getParameter("email") == null)
+			response.sendError(0);
+		else
+			;
+		if (request.getParameter("email2") == null)
+			response.sendError(0);
+		else
+			;
+		
+		//Phone Validation
+		if (request.getParameter("phone1") == null)
+			response.sendError(0);
+		else
+			;
+		if (request.getParameter("phone2") == null)
+			response.sendError(0);
+		else
+			;
+		if (request.getParameter("phone3") == null)
+			response.sendError(0);
+		else
+			;
+		
+		//Password Validation
+		if (request.getParameter("pword") == null)
+			response.sendError(0);
+		else
+			;
+		if (request.getParameter("pword2") == null)
+			response.sendError(0);
+		else
+			;
+	}
+
+}
