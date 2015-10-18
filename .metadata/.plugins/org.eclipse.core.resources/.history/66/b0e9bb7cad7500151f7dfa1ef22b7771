@@ -84,13 +84,9 @@ public class ValidateRegister extends HttpServlet {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(path.toString()));
 		InputStream iUsers = Files.newInputStream(path);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(iUsers));
-		LineNumberReader line = new LineNumberReader(reader);
 		
 		//File checking string
 		String temp = "";
-		
-		//Line counting integer
-		int j = 1;
 		
 		//Email Validation
 		//This must be done first, as users are identified by their unique email address
@@ -98,15 +94,10 @@ public class ValidateRegister extends HttpServlet {
 		//before storing user's registration data
 		if(!email.isEmpty())
 		{
-			while ((temp = line.readLine()) != null)
+			while ((temp = reader.readLine()) != null)
 			{
-				if(line.getLineNumber() == j)
-				{
-					j += 4;
-					if(email.equals(temp))
-						userExists = true;
-				}
-				
+				if(email.equals(temp))
+					userExists = true;
 			}
 		}			
 		

@@ -100,13 +100,9 @@ public class ValidateRegister extends HttpServlet {
 		{
 			while ((temp = line.readLine()) != null)
 			{
-				if(line.getLineNumber() == j)
-				{
-					j += 4;
-					if(email.equals(temp))
-						userExists = true;
-				}
-				
+				if()
+				if(email.equals(temp))
+					userExists = true;
 			}
 		}			
 		

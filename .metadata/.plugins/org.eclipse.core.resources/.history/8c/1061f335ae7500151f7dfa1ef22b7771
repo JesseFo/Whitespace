@@ -89,24 +89,16 @@ public class ValidateRegister extends HttpServlet {
 		//File checking string
 		String temp = "";
 		
-		//Line counting integer
-		int j = 1;
-		
 		//Email Validation
 		//This must be done first, as users are identified by their unique email address
 		//Doing Email Validation first allows us to ensure user does not already exist
 		//before storing user's registration data
 		if(!email.isEmpty())
 		{
-			while ((temp = line.readLine()) != null)
+			while ((temp = reader.readLine()) != null)
 			{
-				if(line.getLineNumber() == j)
-				{
-					j += 4;
-					if(email.equals(temp))
-						userExists = true;
-				}
-				
+				if(email.equals(temp))
+					userExists = true;
 			}
 		}			
 		
