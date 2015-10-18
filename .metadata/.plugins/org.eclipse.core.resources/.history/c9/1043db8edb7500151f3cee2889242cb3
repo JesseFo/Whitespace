@@ -16,7 +16,6 @@ import java.nio.file.Paths;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,21 +61,21 @@ public class ValidateRegister extends HttpServlet {
 														//formatted
 		//Get form values
 		//Name
-		Cookie fName = new Cookie("fName", request.getParameter("fname"));
-		Cookie lName = new Cookie("lName", request.getParameter("lname"));
+		String fName = request.getParameter("fname");
+		String lName = request.getParameter("lname");
 		
 		//Email
-		Cookie email = new Cookie("email", request.getParameter("email"));
-		Cookie email2 = new Cookie("email2", request.getParameter("email2"));
+		String email = request.getParameter("email");
+		String email2 = request.getParameter("email2");
 		
 		//Phone
-		Cookie phone1 = new Cookie("phone1", request.getParameter("phone1"));
-		Cookie phone2 = new Cookie("phone2", request.getParameter("phone2"));
-		Cookie phone3 = new Cookie("phone3", request.getParameter("phone3"));
+		String phone1 = request.getParameter("phone1");
+		String phone2 = request.getParameter("phone2");
+		String phone3 = request.getParameter("phone3");
 		
 		//Password
-		Cookie pword = new Cookie("pword", request.getParameter("pword"));
-		Cookie pword2 = new Cookie("pword2", request.getParameter("pword2"));
+		String pword = request.getParameter("pword");
+		String pword2 = request.getParameter("pword2");
 		
 		//File Streams
 		Path path = Paths.get("users.txt");
@@ -97,7 +96,7 @@ public class ValidateRegister extends HttpServlet {
 		//This must be done first, as users are identified by their unique email address
 		//Doing Email Validation first allows us to ensure user does not already exist
 		//before storing user's registration data
-		if(!email.getValue().isEmpty())
+		if(!email.isEmpty())
 		{
 			while ((temp = line.readLine()) != null)
 			{
@@ -117,17 +116,16 @@ public class ValidateRegister extends HttpServlet {
 		else
 		{
 			//Check if any fields are empty
-			if(fName.getValue().isEmpty() || lName.getValue().isEmpty() || email.getValue().isEmpty() ||
-					email2.getValue().isEmpty() || phone1.getValue().isEmpty() || phone2.getValue().isEmpty() ||
-					phone3.getValue().isEmpty() || pword.getValue().isEmpty() || pword2.getValue().isEmpty())
+			if(fName.isEmpty() || lName.isEmpty() || email.isEmpty() || email2.isEmpty() || phone1.isEmpty()
+					|| phone2.isEmpty() || phone3.isEmpty() || pword.isEmpty() || pword2.isEmpty())
 				nullFields = true;
 			
 			//Check if any fields are incorrectly formatted
-			if(fName.getValue().matches(alpha) || lName.getValue().matches(alpha) || email.getValue().equals(email2.getValue()) ||
-					phone1.getValue().matches(numeric) || phone2.getValue().matches(numeric)
-					|| phone3.getValue().matches(alpha) || pword.getValue().matches(alpha) ||
-					pword2.getValue().matches(alpha))
+			if(fName.matches(alpha) || lName.matches(alpha) || phone1.matches(numeric) || phone2.matches(numeric)
+					|| phone3.matches(alpha) || pword.matches(alpha) || pword2.matches(alpha))
 				formatError = true;
+			
+			
 			
 			if (nullFields && !formatError)
 				response.sendError(1);
@@ -141,7 +139,6 @@ public class ValidateRegister extends HttpServlet {
 						+ System.lineSeparator());
 				response.sendRedirect("posts.html");
 		}
-		writer.close();
 	}
 
 }

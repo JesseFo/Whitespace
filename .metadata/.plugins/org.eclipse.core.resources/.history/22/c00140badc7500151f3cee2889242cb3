@@ -97,7 +97,7 @@ public class ValidateRegister extends HttpServlet {
 		//This must be done first, as users are identified by their unique email address
 		//Doing Email Validation first allows us to ensure user does not already exist
 		//before storing user's registration data
-		if(!email.getValue().isEmpty())
+		if(!email.isEmpty())
 		{
 			while ((temp = line.readLine()) != null)
 			{
@@ -141,7 +141,6 @@ public class ValidateRegister extends HttpServlet {
 						+ System.lineSeparator());
 				response.sendRedirect("posts.html");
 		}
-		writer.close();
 	}
 
 }
