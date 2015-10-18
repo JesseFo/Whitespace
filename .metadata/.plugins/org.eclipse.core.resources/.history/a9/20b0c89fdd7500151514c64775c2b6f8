@@ -63,29 +63,20 @@ public class ValidateRegister extends HttpServlet {
 		//Get form values
 		//Name
 		Cookie fName = new Cookie("fName", request.getParameter("fname"));
-		response.addCookie(fName);
 		Cookie lName = new Cookie("lName", request.getParameter("lname"));
-		response.addCookie(lName);
 		
 		//Email
 		Cookie email = new Cookie("email", request.getParameter("email"));
-		response.addCookie(email);
 		Cookie email2 = new Cookie("email2", request.getParameter("email2"));
-		response.addCookie(email2);
 		
 		//Phone
 		Cookie phone1 = new Cookie("phone1", request.getParameter("phone1"));
-		response.addCookie(phone1);
 		Cookie phone2 = new Cookie("phone2", request.getParameter("phone2"));
-		response.addCookie(phone2);
 		Cookie phone3 = new Cookie("phone3", request.getParameter("phone3"));
-		response.addCookie(phone3);
 		
 		//Password
 		Cookie pword = new Cookie("pword", request.getParameter("pword"));
-		response.addCookie(pword);
 		Cookie pword2 = new Cookie("pword2", request.getParameter("pword2"));
-		response.addCookie(pword2);
 		
 		//File Streams
 		Path path = Paths.get("users.txt");
