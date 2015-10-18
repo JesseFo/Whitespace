@@ -1,0 +1,167 @@
+/*
+ * Project: COMP 3095 Message Board
+ * Assignment: Assignment #1
+ * Author: Jesse Fogel
+ * Student Number: 100893486
+ * Date: 17/10/2015
+ * Description: This servlet is called when the user presses the register button. It validates the data
+ * that the users enters, ensuring all data is entered, and properly formatted. Assuming it is correct,
+ * this servlet will save the user data to the database (currently users.txt) 
+*/
+
+import java.io.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ValidateRegister
+ */
+@WebServlet("/ValidateRegister")
+public class ValidateRegister extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ValidateRegister() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+		
+		//Error Booleans
+		boolean nullFields = false;
+		boolean formatError = false;
+		
+		//Regex Strings
+		String alpha = "^(?:\\W||\\s)*$";				//These strings are patterns used by the String.matches
+		String numeric = "^(?:\\D||\\s)*$";				//function, to determine whether the strings are incorrectly
+														//formatted
+		//Get form values
+		//Name
+		String fName = request.getParameter("fname");
+		String lName = request.getParameter("lname");
+		
+		//Email
+		String email = request.getParameter("email");
+		String email2 = request.getParameter("email2");
+		
+		//Phone
+		String phone1 = request.getParameter("phone1");
+		String phone2 = request.getParameter("phone2");
+		String phone3 = request.getParameter("phone3");
+		
+		//Password
+		String pword = request.getParameter("pword");
+		String pword2 = request.getParameter("pword2");
+		
+		//File Streams
+		Path path = Paths.get("users.txt");
+		FileOutputStream oUsers = new FileOutputStream(path.toFile(), true);
+		InputStream iUsers = Files.newInputStream(path);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(iUsers));
+		
+		//File checking string
+		String temp = "";
+		
+		//Email Validation
+		//This must be done first, as users are identified by their unique email address
+		//Doing Email Validation first allows us to ensure user does not already exist
+		//before storing user's registration data
+		if (email.isEmpty())
+			nullFields = true;
+		else
+			if(!email.matches(alpha))
+				formatError = true;
+			else
+				while ((temp = reader.readLine()) != null)
+					if (email.equals(temp))
+						userExists = true;
+		if (email2.isEmpty())
+			nullFields = true;
+		else
+			if(!email2.equals(email))
+				formatError = true;
+		
+		//Name Validation
+		if (fName.isEmpty())
+			nullFields = true;
+		else
+			if(!fName.matches(alpha))
+				formatError = true;
+		if (lName.isEmpty())
+			nullFields = true;
+		else
+			if(!lName.matches(alpha))
+				formatError = true;
+		
+		//Phone Validation
+		if (phone1.isEmpty())
+			nullFields = true;
+		else
+			if(!phone1.matches(numeric))
+				formatError = true;
+			else
+				;
+		if (phone2.isEmpty())
+			nullFields = true;
+		else
+			if(!phone2.matches(numeric))
+				formatError = true;
+			else
+				;
+		if (phone3.isEmpty())
+			nullFields = true;
+		else
+			if(!phone3.matches(numeric))
+				formatError = true;
+			else
+				;
+		
+		//Password Validation
+		if (pword.isEmpty())
+			nullFields = true;
+		else
+			if(!(pword.matches(".*[0-9].*") && pword.matches(".*[A-Z].*")))
+				formatError = true;
+			else
+				;
+		if (pword2.isEmpty())
+			nullFields = true;
+		else
+			if(!pword2.equals(pword2))
+				formatError = true;
+			else
+				;
+		
+		if (nullFields && !formatError)
+			response.sendError(0);
+		else if (!nullFields && formatError)
+			response.sendError(1);
+		else if (nullFields && formatError)
+			response.sendError(2);
+	}
+
+}
