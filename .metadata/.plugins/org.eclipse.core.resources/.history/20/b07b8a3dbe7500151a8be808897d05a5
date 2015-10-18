@@ -125,16 +125,12 @@ public class ValidateRegister extends HttpServlet {
 					|| phone3.matches(alpha) || pword.matches(alpha) || pword2.matches(alpha))
 				formatError = true;
 			
-			temp = fName + System.lineSeparator() + lName + System.lineSeparator() + email + System.lineSeparator()
-				+ email2 + System.lineSeparator() + phone1 + System.lineSeparator() + phone2 + System.lineSeparator()
-				+ phone3 + System.lineSeparator() + pword + System.lineSeparator() + pword2 + System.lineSeparator();
-			
 			if (nullFields && !formatError)
-				response.sendError(1, temp);
+				response.sendError(1);
 			else if (!nullFields && formatError)
-				response.sendError(2, temp);
+				response.sendError(2);
 			else if (nullFields && formatError)
-				response.sendError(3, temp);
+				response.sendError(3);
 			else
 				writer.write(lName + ", " + fName + System.lineSeparator() + email
 						+ System.lineSeparator() + "(" + phone1 + ") " + phone2 + "-" + phone3

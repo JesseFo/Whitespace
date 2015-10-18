@@ -4,9 +4,9 @@
  * Author: Jesse Fogel
  * Student Number: 100893486
  * Date: 18/10/2015
- * Description: This servlet is called when the user presses the login button. It validates the data
+ * Description: This servlet is called when the user presses the register button. It validates the data
  * that the users enters, ensuring all data is entered, and properly formatted. Assuming it is correct,
- * this servlet will save the user data to the session and redirect to the posts page
+ * this servlet will save the user data to the database (currently users.txt) 
 */
 
 import java.io.BufferedReader;
