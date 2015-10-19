@@ -18,7 +18,7 @@
 			
 			<div id="content">
 				<h1>Register</h1>
-				<form action="#" method="post">
+				<form action="#" method="post" action="ValidateRegister" name="myForm">
 					<table>
 						<tr>
 							<td class="formlabel">First Name:</td>
@@ -86,5 +86,16 @@
 				</form>
 			</div>
 		</div>
+		<script type="text/javascript">
+		  if(fname = getCookie("fName")) document.myForm.fname.value = fName;
+		  if(lname = getCookie("lName")) document.myForm.lname.value = lName;
+		  if(email = getCookie("email")) document.myForm.email.value = email;
+		  if(email2 = getCookie("email2")) document.myForm.email2.value = email2;
+		  if(phone1 = getCookie("phone1")) document.myForm.phone1.value = phone1;
+		  if(phone2 = getCookie("phone2")) document.myForm.phone2.value = phone2;
+		  if(phone3 = getCookie("phone3")) document.myForm.phone3.value = phone3;
+		  if(pword = getCookie("pword")) document.myForm.pword.value = pword;
+		  if(pword2 = getCookie("pword2")) document.myForm.pword2.value = pword2;
+		</script>
 	</body>
 </html>
