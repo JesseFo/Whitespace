@@ -39,9 +39,3 @@ td
 {
 	text-align: right;
 }
-
-.post
-{
-	border: 1p solid black;
-	border-radius: 10px;
-}

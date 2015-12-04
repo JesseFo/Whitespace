@@ -18,7 +18,7 @@
 			
 			<div id="content">
 				<h1>Posts</h1>
-				<p><a href="newpost.jsp">Write a post</a></p> <% // <-- hide this if the user isn't logged in %>
+				<p><a href="newpost.jsp">Write a post</a></p>
 			</div>
 		</div>
 	</body>

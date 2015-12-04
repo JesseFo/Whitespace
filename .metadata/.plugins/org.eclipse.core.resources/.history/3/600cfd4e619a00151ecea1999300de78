@@ -40,7 +40,7 @@ td
 	text-align: right;
 }
 
-.post
+#post
 {
 	border: 1p solid black;
 	border-radius: 10px;
