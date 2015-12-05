@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Posts</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav>
+				Message Board
+				<a href="#">Home</a>
+				<a href="posts.jsp">Posts</a>
+				<a href="#">Admin</a>
+			</nav>
+			
+			<div id="content">
+				<h1>Posts</h1>
+				<p><a href="newpost.jsp">Write a post</a></p>
+				<hr />
+				<div class="post">
+					<h2>Post Title</h2>
+					<h4>Author: FirstName Lastname</h4>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
