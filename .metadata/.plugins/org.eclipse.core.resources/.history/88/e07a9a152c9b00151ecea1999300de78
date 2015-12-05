@@ -56,5 +56,4 @@ td
 	width: 60%;
 	padding: 5px;
 	margin: 10px auto;
-	background: #f2f2f2;
 }
