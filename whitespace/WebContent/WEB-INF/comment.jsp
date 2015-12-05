@@ -11,9 +11,9 @@
 		<div id="wrapper">
 			<nav>
 				Message Board
-				<a href="#">Home</a>
+				<a href="index.html">Home</a>
 				<a href="posts.jsp">Posts</a>
-				<a href="#">Admin</a>
+				<a href="adminview.jsp">Admin</a>
 			</nav>
 			
 			<div id="content">
